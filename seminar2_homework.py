@@ -55,3 +55,22 @@ else:
 x = fraction.Fraction(numerator1, denominator1)
 y = fraction.Fraction(numerator2, denominator2)
 print(x + y)
+
+
+# multiplication of fractions
+
+numerator1, denominator1 = map(int, (input("Enter fraction as a/b: ").split("/")))
+numerator2, denominator2 = map(int, (input("Enter fraction as c/d: ").split("/")))
+
+x = fraction.Fraction(numerator1, denominator1)
+y = fraction.Fraction(numerator2, denominator2)
+print(x * y)
+
+if denominator1 == 0 or denominator2 == 0:
+    print("Not a fraction!")
+
+else:
+    numerator_result = numerator1 * numerator2
+    denominator_result = denominator1 * denominator2
+    common_divider = gcd(numerator_result, denominator_result)
+    print(f"{numerator_result // common_divider}/{denominator_result // common_divider}")
