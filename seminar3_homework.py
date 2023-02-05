@@ -65,7 +65,8 @@ my_dict = {
     "food": 12,
     "lighter": 6,
     "map": 1,
-    "phone": 7
+    "phone": 7,
+    "rifle": 9
 }
 
 MAX_WEIGHT = 20
@@ -78,3 +79,9 @@ for key, value in my_dict.items():
         final_lst.append(key)
 
 print(final_lst)
+
+sorted_values = dict(sorted(my_dict.items(), key=lambda x: -x[1]))
+for key, value in sorted_values.items():
+    if value <= MAX_WEIGHT:
+        print(key, sep='/n')
+        MAX_WEIGHT -= value
