@@ -53,3 +53,19 @@ result = Counter(text.split())
 print(Counter(result).most_common(10))
 
 
+# Создайте словарь со списком вещей для похода в качестве ключа и их массой в качестве значения.
+# Определите какие вещи влезут в рюкзак передав его максимальную грузоподъёмность.
+# Достаточно вернуть один допустимый вариант. *Верните все возможные варианты комплектации рюкзака.
+
+my_dict = {"compass": 2, "tent": 15, "knife": 5, "socks": 3, "food": 12, "lighter": 6, "map": 1}
+
+MAX_WEIGHT = 20
+spam = 0
+final_lst = []
+
+for key, value in my_dict.items():
+    if spam + value < MAX_WEIGHT:
+        spam += value
+        final_lst.append(key)
+
+print(final_lst)
