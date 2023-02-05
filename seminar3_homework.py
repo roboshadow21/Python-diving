@@ -14,6 +14,11 @@ for el in source_li:
 
 print(list(set(result_li)))
 
+
+# В большой текстовой строке подсчитать количество встречаемых слов и вернуть 10 самых частых.
+# Не учитывать знаки препинания и регистр символов. За основу возьмите любую статью из википедии
+# или из документации к языку.
+
 text = """       
           The keyword def introduces a function definition. It must be followed by the function name and " \
        "the parenthesized list of formal parameters. The statements that form the body of the function " \
