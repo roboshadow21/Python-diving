@@ -47,3 +47,74 @@ def my_func(**kwargs):
 
 
 print(my_func(a=2, b=3, c=[1, 2, 3]))
+
+
+# Напишите программу банкомат
+
+
+def get_cash(balance: int):
+    cash = int(input("Enter summa multiply of 50: "))
+    if balance == 0:
+        print("Not enough cash!")
+    elif cash % 50 != 0:
+        print("Summa not multiply of 50! Try again")
+    else:
+        percent = float(1.5) * cash / 100
+        if percent < 30:
+            result = (balance - 30) - cash
+            return result
+        elif percent > 600:
+            result = (balance - 600) - cash
+            return result
+        else:
+            result = (balance - percent) - cash
+
+            return result
+
+
+def deposit_cash(balance: int):
+    cash = int(input("Enter summa multiply of 50: "))
+    if cash % 50 != 0:
+        print("Summa not multiply of 50! Try again")
+    elif balance > 5_000_000:
+        res = (balance * 10) / 100
+        balance -= res
+    else:
+        balance = cash
+        return balance
+
+
+def atm_machine():
+    balance = 0
+    result = 0
+    count = 0
+    operation_list = []
+
+    while True:
+
+        choice = int(input("Select an action:\n1 - withdraw cash\n2 - deposit cash\n3 - exit\n: "))
+
+        if count == 3:
+            balance += (3 * balance) / 100
+
+        if choice == 1 and balance < choice:
+            print("Not enough cash!")
+
+        elif choice == 1 and balance >= choice:
+            result = get_cash(balance)
+            balance -= result
+            count += 1
+
+        elif choice == 2:
+            result = deposit_cash(balance)
+            balance += result
+            count += 1
+
+        else:
+            exit()
+
+        operation_list.append(result)
+        print(f"Your balance = {balance}")
+
+
+atm_machine()
