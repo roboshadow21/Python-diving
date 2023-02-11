@@ -27,6 +27,7 @@ transposed = transposed_matrix(matr)
 for i in transposed:
     print(*i)
 
+
 # Напишите функцию принимающую на вход только ключевые параметры и возвращающую словарь,
 # где ключ - значение переданного аргумента, а значение - имя аргумента.
 # Если ключ не хешируем, используйте его строковое представление.
@@ -39,8 +40,8 @@ def my_func(**kwargs):
             temp = hash(value)
             my_dict[temp] = key
         except TypeError:
-            key_unhashable = str(value)
-            my_dict[key_unhashable] = key
+            key_not_hashable = str(value)
+            my_dict[key_not_hashable] = key
 
     return my_dict
 
