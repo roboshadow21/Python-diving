@@ -28,3 +28,12 @@ li3 = ["10.25%", "12%"]
 result = {key: (value[i] * value[i + 1]) / 100 for key in li1 for value in
           list(zip(li2, [float(el[:-1]) for el in li3])) for i in
           range(len(li1) - 1)}
+
+# Создайте функцию генератор чисел Фибоначчи
+
+
+def fibonacci(number: int) -> int:
+    if number <= 1:
+        yield 1
+    else:
+        yield fibonacci(number - 1) + fibonacci(number - 2)
