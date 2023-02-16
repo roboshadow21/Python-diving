@@ -40,8 +40,8 @@ def my_func(**kwargs):
             temp = hash(value)
             my_dict[temp] = key
         except TypeError:
-            key_not_hashable = str(value)
-            my_dict[key_not_hashable] = key
+            key_unhashable = str(value)
+            my_dict[key_unhashable] = key
 
     return my_dict
 
@@ -50,9 +50,6 @@ print(my_func(a=2, b=3, c=[1, 2, 3]))
 
 
 # Напишите программу банкомат
-# Начальная сумма равна нулю
-# Допустимые действия - пополнить, снять, выйти
-#
 
 
 def get_cash(balance: int):
