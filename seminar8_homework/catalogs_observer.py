@@ -8,14 +8,14 @@
 import json
 import csv
 import pickle
-import convert_dict_to_json
-import convert_dict_to_csv
-import convert_dict_to_pickle
+from convert_dict_to_json import convert_to_json
+from convert_dict_to_csv import convert_to_csv
+from convert_dict_to_pickle import convert_to_pickle
 from pathlib import Path
 
 
-def catalogs_walk(data: Path) -> dict[str, list]:
-    paths = sorted(Path('Test').rglob('*'))
+def catalogs_walk(catalog: Path) -> dict[str, list]:
+    paths = sorted(catalog.rglob('*'))
 
     my_dict = {
         'directory': None,
@@ -37,3 +37,11 @@ def catalogs_walk(data: Path) -> dict[str, list]:
     my_dict['directory'] = folders_lst
 
     return my_dict
+
+
+if __name__ == '__main__':
+    data = Path('Test')
+    result_dict = catalogs_walk(data)
+    convert_to_json(result_dict)
+    convert_to_csv(result_dict)
+    convert_to_pickle(result_dict)

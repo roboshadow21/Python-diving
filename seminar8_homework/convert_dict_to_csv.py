@@ -1,7 +1,7 @@
 import csv
 
 
-def convert_dict_to_csv(data: dict) -> None:
+def convert_to_csv(data: dict) -> None:
     rows = []
     for k, v in data.items():
         rows.append({k: v})
