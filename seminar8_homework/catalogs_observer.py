@@ -8,6 +8,9 @@
 import json
 import csv
 import pickle
+import convert_dict_to_json
+import convert_dict_to_csv
+import convert_dict_to_pickle
 from pathlib import Path
 
 
