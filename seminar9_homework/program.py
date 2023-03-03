@@ -1,7 +1,7 @@
 import csv
 from random import choice
-from my_decorators import decorator_data_to_json, decorator_data_from_csv
 
+from my_decorators import decorator_data_to_json, decorator_data_from_csv
 
 # Напишите следующие функции:
 # Нахождение корней квадратного уравнения
@@ -9,8 +9,12 @@ from my_decorators import decorator_data_to_json, decorator_data_from_csv
 # Декоратор, запускающий функцию нахождения корней квадратного уравнения с каждой тройкой чисел из csv файла.
 # Декоратор, сохраняющий переданные параметры и результаты работы функции в json файл.
 
+ROWS = 100
+COLUMNS = 3
+NUMBERS_RANGE = 50
 
-def rand_numbers(rows: int, columns: int, nums_range: int) -> None:
+
+def rand_numbers_table(rows: int, columns: int, nums_range: int) -> None:
     src_numbers = [i for i in range(nums_range)]
 
     with open('numbers.csv', 'w', encoding='utf-8', newline='') as f:
@@ -35,3 +39,9 @@ def quadratic_equation(a: int, b: int, c: int) -> (str, float):
         x1 = (-b - (discriminant ** 0.5)) / (2 * a)
         x2 = (-b + (discriminant ** 0.5)) / (2 * a)
         return x1, x2
+
+
+if __name__ == '__main__':
+    rand_numbers_table(ROWS, COLUMNS, NUMBERS_RANGE)
+    for _ in range(ROWS):
+        print(quadratic_equation())
