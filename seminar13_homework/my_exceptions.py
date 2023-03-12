@@ -1,11 +1,9 @@
 class TriangleException(Exception):
-
     """Class - inherited from the base class Exception."""
     pass
 
 
 class NotNegativeException(TriangleException):
-
     """The class throws an exception if the side of the triangle is a negative number."""
 
     def __init__(self, side):
@@ -18,7 +16,6 @@ class NotNegativeException(TriangleException):
 
 
 class NotTriangleException(TriangleException):
-
     """The class throws an exception if the sum of any two sides of a triangle is less than the third."""
 
     def __init__(self, a, b, c):
